@@ -1,0 +1,94 @@
+body{
+  /* background-color: transparent; */
+  background-position: center center;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.main{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  height: 500px;
+  text-align: center;
+  margin-left: -250px;
+  margin-top: -260px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.js-clock{
+  position: absolute;
+  margin-bottom: 120px;
+  font: small-caps bold 54px/1 sans-serif;
+  color:white;
+}
+
+.js-weather{
+  height: 100px;
+}
+
+.js-form{
+  position:absolute;
+  margin-bottom: -40px;
+}
+
+.js-form input{
+  height: 100%;
+  width: 260px;
+  font-size: 22px;
+  text-align: center;
+  border: none;
+  border-bottom: 3px solid white;
+  background-color: transparent;
+}
+
+.js-form input:focus{
+  outline:none;
+}
+
+.js-form input::placeholder{
+  color:white;
+}
+
+.btn{
+  cursor: pointer;
+}
+
+.clicked {
+  color:#9AECDB;
+}
+
+.form,
+.greetings{
+  display: none;
+}
+
+.showing {
+  display: block;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+  } 
+  to{
+    opacity: 1;
+  }
+}
+
+.bgImage{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  min-width: 1024px;
+  min-height: 100%;
+  animation: fadeIn 0.9s ease-in;
+}
+
