@@ -1,5 +1,5 @@
-const body = document.querySelector("body");
-const IMG_NUMBER = 5;
+const body = document.querySelector("body"),
+    IMG_NUMBER = 5;
 
 function paintImage(imgNumber){
     const image = new Image();

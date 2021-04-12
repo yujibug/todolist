@@ -1,3 +1,52 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 body{
   /* background-color: transparent; */
   background-position: center center;
@@ -7,7 +56,7 @@ body{
 
 .main{
   position: absolute;
-  left: 50%;
+  left: 49%;
   top: 50%;
   width: 500px;
   height: 500px;
@@ -21,13 +70,44 @@ body{
 
 .js-clock{
   position: absolute;
-  margin-bottom: 120px;
-  font: small-caps bold 54px/1 sans-serif;
+  margin-bottom: 130px;
+  font: small-caps bold 100px/1 sans-serif;
   color:white;
 }
 
 .js-weather{
-  height: 100px;
+  position:absolute;
+  width: 1476px;
+  height: 50px;
+  top: 22px;
+  left: 30px;
+}
+
+.js-weather .locationIcon {
+  position: relative;
+  width:14px;
+  left:2px;
+  bottom: -2px;
+}
+
+.js-weather .location {
+  position: absolute;
+  left:30px;
+  top:1px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  color: white;
+  text-transform: lowercase;
+}
+
+.js-weather .tempWeather {
+  position:absolute;
+  top:1px;
+  right:0;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  color: white;
+  text-transform: lowercase;
 }
 
 .js-form{
@@ -36,21 +116,49 @@ body{
 }
 
 .js-form input{
+  position: relative;
+  left: 3px;
   height: 100%;
-  width: 260px;
-  font-size: 22px;
+  width: 350px;
+  font-size: 32px;
   text-align: center;
   border: none;
   border-bottom: 3px solid white;
+  opacity: 0.7;
   background-color: transparent;
 }
 
 .js-form input:focus{
   outline:none;
+  opacity: 1;
 }
 
 .js-form input::placeholder{
   color:white;
+  font-size: 24px;
+}
+
+.js-form .underline {
+  position: absolute;
+  left: 3px;
+  width: 100%;
+  bottom: 0;
+  height: 3px;
+}
+
+.js-form .underline:before{
+  position:absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  left:0;
+  background: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.js-form input:focus ~ .underline:before{
+  transform: scaleX(1);
 }
 
 .btn{
@@ -62,7 +170,8 @@ body{
 }
 
 .form,
-.greetings{
+.greetings,
+.js-toDoForm{
   display: none;
 }
 

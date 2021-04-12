@@ -1,10 +1,8 @@
-const weatherHeader = document.querySelector(".js-weather");
-const tempWeather = weatherHeader.querySelector(".tempWeather");
-const location = weatherHeader.querySelector(".location");
-const API_KEY = '82844600a0969a472189ceab191383f6';
-const COORDS = 'coords';
-
-weatherHeader.innerText='test';
+const weatherHeader = document.querySelector(".js-weather"),
+    tempWeather = weatherHeader.querySelector(".tempWeather"),
+    locations = weatherHeader.querySelector(".location"),
+    API_KEY = '82844600a0969a472189ceab191383f6',
+    COORDS = 'coords';
 
 function getWeather(lat, lon){
     fetch(
@@ -14,12 +12,13 @@ function getWeather(lat, lon){
     }).then(function(json){
         const temperature = json.main.temp;
         const place = json.name;
-        tempWeather.innerText = `${temperature}° ${json.weather[0].main}`;
-        location.innerText = "test";
-        // const icon = new Image();
-        // icon.src = `http://openweathermap.org/img/wn/${json.weather[0].icon}.png`;
-        // icon.classList.add("weatherIcon");
-        // weather.appendChild(icon);
+        const weatherText = json.weather[0].main
+        tempWeather.innerText = `${temperature}° ${weatherText}`;
+        locations.innerText = `${place}`;
+        const icon = new Image();
+        icon.src = "./images/icon.png";
+        icon.classList.add("locationIcon");
+        weatherHeader.appendChild(icon);
     });
 }
 
