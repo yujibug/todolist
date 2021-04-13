@@ -1,10 +1,13 @@
 const form = document.querySelector(".js-form"),
  input = form.querySelector("input"),
  greeting = document.querySelector(".js-greetings"),
- toDoForm = document.querySelector(".js-toDoForm");
+ whatToDoForm = document.querySelector(".js-toDoForm"),
+ mainDiv = document.querySelector(".main");
+ outerDiv = document.querySelector(".outer");
 
 const USER_LS = "currentUser",
- SHOWING_CN = "showing";
+ SHOWING_CN = "showing",
+ MOVING_CT = "moving";
 
 function saveName(text){
     localStorage.setItem(USER_LS,text);
@@ -23,10 +26,12 @@ function askForName(){
 }
 
 function paintGreeting(text){
+    mainDiv.classList.add(MOVING_CT);
     form.classList.remove(SHOWING_CN);
     greeting.classList.add(SHOWING_CN);
-    greeting.innerText = `${text} 하이염`;
-    toDoForm.classList.add(SHOWING_CN);
+    greeting.innerText = `${text}, What are you doing today?` 
+    whatToDoForm.classList.add(SHOWING_CN);
+    outerDiv.classList.add(SHOWING_CN);
 }
 
 function loadName() {
