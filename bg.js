@@ -4,8 +4,11 @@ const body = document.querySelector("body"),
 function paintImage(imgNumber){
     const image = new Image();
     image.src = `./images/${imgNumber}.jpg`;
-    image.classList.add("bgImage");
-    body.appendChild(image);
+    image.addEventListener("load", function(event){
+        console.log("done!");
+        image.classList.add("bgImage");
+        body.appendChild(image);
+    });
 }
 
 function genRandom(){
