@@ -5,7 +5,6 @@ function paintImage(imgNumber){
     const image = new Image();
     image.src = `./images/${imgNumber}.jpg`;
     image.addEventListener("load", function(event){
-        console.log("done!");
         image.classList.add("bgImage");
         body.appendChild(image);
     });
