@@ -3,7 +3,7 @@ const body = document.querySelector("body"),
 
 function paintImage(imgNumber){
     const image = new Image();
-    image.src = `./images/${imgNumber}.jpg`;
+    image.src = `https://cdn.jsdelivr.net/gh/yujibug/todolist//images/${imgNumber}.jpg`;
     image.addEventListener("load", function(event){
         image.classList.add("bgImage");
         body.appendChild(image);
